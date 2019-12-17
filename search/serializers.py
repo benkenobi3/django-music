@@ -11,19 +11,19 @@ class GenreSerializer(serializers.ModelSerializer):
 class SingerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Singer
-        fields = ('id', 'name',)
+        fields = ('id', 'name', 'avatar_url',)
 
 
 class SongSerializer(serializers.ModelSerializer):
     class Meta:
         model = Song
-        fields = ('id', 'name', 'duration',)
+        fields = ('id', 'name', 'img_url', 'duration',)
 
 
 class AlbumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Album
-        fields = ('id', 'name', 'duration', 'type', 'date', 'rate')
+        fields = ('id', 'name', 'img_url', 'duration', 'type', 'date', 'rate',)
 
 
 class GenreDetailSerializer(serializers.ModelSerializer):
@@ -43,7 +43,7 @@ class SingerDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Singer
-        fields = ('id', 'name', 'songs', 'albums')
+        fields = ('id', 'name', 'avatar_url', 'poster_url', 'songs', 'albums',)
 
 
 class SongDetailSerializer(serializers.ModelSerializer):
@@ -54,7 +54,7 @@ class SongDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Song
-        fields = ('id', 'name', 'duration', 'genres', 'singers', 'albums')
+        fields = ('id', 'name', 'img_url', 'duration', 'genres', 'singers', 'albums',)
 
 
 class AlbumDetailSerializer(serializers.ModelSerializer):
@@ -65,6 +65,6 @@ class AlbumDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Album
-        fields = ('id', 'name', 'duration', 'type', 'date', 'rate', 'genres', 'singers', 'songs',)
+        fields = ('id', 'name', 'img_url', 'duration', 'type', 'date', 'rate', 'genres', 'singers', 'songs',)
 
 # serializers.PrimaryKeyRelatedField(queryset=Album.objects.all(), many=True)

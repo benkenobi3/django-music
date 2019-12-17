@@ -23,10 +23,10 @@ class SongSerializer(serializers.ModelSerializer):
 class AlbumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Album
-        fields = ('id', 'name', 'durations', 'type', 'date', 'rate')
+        fields = ('id', 'name', 'duration', 'type', 'date', 'rate')
 
 
-class FullGenreSerializer(serializers.ModelSerializer):
+class GenreDetailSerializer(serializers.ModelSerializer):
 
     songs = SongSerializer(many=True, read_only=True)
     albums = AlbumSerializer(many=True, read_only=True)
@@ -36,27 +36,28 @@ class FullGenreSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'songs', 'albums')
 
 
-class FullSingerSerializer(serializers.ModelSerializer):
+class SingerDetailSerializer(serializers.ModelSerializer):
 
-    genres = GenreSerializer(many=True, read_only=True)
+    songs = SongSerializer(many=True, read_only=True)
     albums = AlbumSerializer(many=True, read_only=True)
 
     class Meta:
         model = Singer
-        fields = ('id', 'name', 'genres', 'albums')
+        fields = ('id', 'name', 'songs', 'albums')
 
 
-class FullSongSerializer(serializers.ModelSerializer):
+class SongDetailSerializer(serializers.ModelSerializer):
 
     genres = GenreSerializer(many=True, read_only=True)
     singers = SingerSerializer(many=True, read_only=True)
+    albums = AlbumSerializer(many=True, read_only=True)
 
     class Meta:
         model = Song
-        fields = ('id', 'name', 'duration', 'genres', 'singers',)
+        fields = ('id', 'name', 'duration', 'genres', 'singers', 'albums')
 
 
-class FullAlbumSerializer(serializers.ModelSerializer):
+class AlbumDetailSerializer(serializers.ModelSerializer):
 
     genres = GenreSerializer(many=True, read_only=True)
     singers = SingerSerializer(many=True, read_only=True)
@@ -65,3 +66,5 @@ class FullAlbumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Album
         fields = ('id', 'name', 'duration', 'type', 'date', 'rate', 'genres', 'singers', 'songs',)
+
+# serializers.PrimaryKeyRelatedField(queryset=Album.objects.all(), many=True)

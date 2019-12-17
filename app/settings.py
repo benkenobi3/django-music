@@ -50,7 +50,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['musicsear4.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['musicsear4.herokuapp.com', 'sear4music.herokuapp.com', 'localhost']
 
 
 # Application definition

@@ -50,8 +50,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['musicsear4.herokuapp.com', 'sear4music.herokuapp.com', 'localhost']
-
+ALLOWED_HOSTS = ['https://musicsear4.herokuapp.com', 'https://sear4music.herokuapp.com', 'localhost']
 
 # Application definition
 
@@ -63,6 +62,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'search',
 ]
 
@@ -74,6 +74,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 TEMPLATES = [
@@ -100,6 +102,13 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ]
 }
+
+CORS_ORIGIN_WHITELIST = [
+    "https://musicsear4.herokuapp.com",
+    "https://sear4music.herokuapp.com",
+    "http://localhost:8080",
+    "http://localhost:8000"
+]
 
 WSGI_APPLICATION = 'app.wsgi.application'
 

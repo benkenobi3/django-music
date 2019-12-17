@@ -103,12 +103,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ORIGIN_WHITELIST = [
-    "https://musicsear4.herokuapp.com",
-    "https://sear4music.herokuapp.com",
-    "http://localhost:8080",
-    "http://localhost:8000"
-]
+CORS_ORIGIN_ALLOW_ALL = True
 
 WSGI_APPLICATION = 'app.wsgi.application'
 

@@ -18,7 +18,7 @@ class SingerListView(generics.ListAPIView):
 class SongListView(generics.ListAPIView):
     queryset = Song.objects.all()
     serializer_class = SongSerializer
-    pagination_class = AlbumPagination
+    pagination_class = SongPagination
 
 
 class AlbumListView(generics.ListAPIView):

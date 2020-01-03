@@ -1,6 +1,7 @@
 from rest_framework import generics
 
 from .serializers import *
+from .paginations import *
 
 
 class GenreListView(generics.ListAPIView):
@@ -11,16 +12,19 @@ class GenreListView(generics.ListAPIView):
 class SingerListView(generics.ListAPIView):
     queryset = Singer.objects.all()
     serializer_class = SingerSerializer
+    pagination_class = AlbumPagination
 
 
 class SongListView(generics.ListAPIView):
     queryset = Song.objects.all()
     serializer_class = SongSerializer
+    pagination_class = AlbumPagination
 
 
 class AlbumListView(generics.ListAPIView):
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer
+    pagination_class = AlbumPagination
 
 
 class GenreDetailView(generics.RetrieveUpdateDestroyAPIView):

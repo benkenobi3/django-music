@@ -13,4 +13,5 @@ urlpatterns = [
     path('song/<int:pk>/', SongDetailView.as_view()),
     path('album/all/', AlbumListView.as_view()),
     path('album/<int:pk>/', AlbumDetailView.as_view()),
+    path('album/top/', AlbumTopView.as_view()),
 ]

@@ -105,7 +105,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 20
 }
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 
 WSGI_APPLICATION = 'app.wsgi.application'
 

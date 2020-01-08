@@ -14,5 +14,5 @@ class AlbumPagination(PageNumberPagination):
 
 
 class TopPagination(PageNumberPagination):
-    page_size = 100
-    max_page_size = 100
+    page_size = 10
+    max_page_size = 10

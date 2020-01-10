@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework import filters
 
 from .serializers import *
 from .paginations import *
@@ -13,18 +14,24 @@ class SingerListView(generics.ListAPIView):
     queryset = Singer.objects.all()
     serializer_class = SingerSerializer
     pagination_class = AlbumPagination
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["name"]
 
 
 class SongListView(generics.ListAPIView):
     queryset = Song.objects.all()
     serializer_class = SongSerializer
     pagination_class = SongPagination
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["name"]
 
 
 class AlbumListView(generics.ListAPIView):
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer
     pagination_class = AlbumPagination
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["name"]
 
 
 class GenreDetailView(generics.RetrieveUpdateDestroyAPIView):

@@ -66,5 +66,3 @@ class AlbumDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Album
         fields = ('id', 'name', 'img_url', 'duration', 'type', 'date', 'rate', 'genres', 'singers', 'songs',)
-
-# serializers.PrimaryKeyRelatedField(queryset=Album.objects.all(), many=True)

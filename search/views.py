@@ -56,5 +56,5 @@ class AlbumDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class AlbumTopView(generics.ListAPIView):
     queryset = Album.objects.all().exclude(rate=None).order_by("-rate")
-    serializer_class = AlbumSerializer
+    serializer_class = AlbumDetailSerializer
     pagination_class = TopPagination

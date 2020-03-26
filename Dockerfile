@@ -12,7 +12,7 @@ RUN apk update && \
 
 ENV DJANGO_ENV="DEBUG" \
     DJANGO_SECRET_KEY="ea0cd97ad90d22fe1c9624568d45b5f85987d8f80d9c6adb" \
-    DJANGO_APP_PORT="8000"
+    PORT="5000"
 
 COPY ./ /app
 

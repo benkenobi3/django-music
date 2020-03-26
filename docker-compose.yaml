@@ -10,7 +10,7 @@ services:
       - POSTGRES_PASSWORD=postgres
     restart: always
     volumes:
-      - /projects/legion/volumes/db:/var/lib/postgresql/data
+      - /projects/music/volumes/db:/var/lib/postgresql/data
     networks:
       - backend
     ports:

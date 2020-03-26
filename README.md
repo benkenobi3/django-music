@@ -1,6 +1,6 @@
-# Backend-часть проекта MusicSearch
+# Backend-часть проекта Music Search
 
-Проект MusicSearch - это сервис поиска и оценки музыки.
+Проект Music Search - это сервис поиска и оценки музыки.
 
 ## Полезные ссылки
 

@@ -9,8 +9,6 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     restart: always
-    volumes:
-      - /projects/music/volumes/db:/var/lib/postgresql/data
     networks:
       - backend
     ports:

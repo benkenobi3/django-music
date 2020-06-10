@@ -21,9 +21,12 @@ class SongSerializer(serializers.ModelSerializer):
 
 
 class AlbumSerializer(serializers.ModelSerializer):
+
+    singers = SingerSerializer(many=True, read_only=True)
+
     class Meta:
         model = Album
-        fields = ('id', 'name', 'img_url', 'duration', 'type', 'date', 'rate',)
+        fields = ('id', 'name', 'img_url', 'duration', 'type', 'date', 'rate', 'singers',)
 
 
 class GenreDetailSerializer(serializers.ModelSerializer):

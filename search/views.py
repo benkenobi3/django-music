@@ -27,7 +27,7 @@ class SongListView(generics.ListAPIView):
 
 
 class AlbumListView(generics.ListAPIView):
-    queryset = Album.objects.all().order_by('date')
+    queryset = Album.objects.all().order_by('-date')
     serializer_class = AlbumSerializer
     pagination_class = AlbumPagination
     filter_backends = [filters.SearchFilter]
